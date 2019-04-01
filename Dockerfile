@@ -1,2 +1,2 @@
 FROM ubuntu
-RUN touch asdf
+RUN cat asdf
