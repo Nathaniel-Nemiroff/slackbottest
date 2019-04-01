@@ -1,2 +1,2 @@
-FROM ubuntu
-RUN apt install ruby;snap install ngrok
+FROM ruby:2.5
+RUN snap install ngrok
