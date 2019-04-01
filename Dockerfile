@@ -1,2 +1,3 @@
 FROM ubuntu
-RUN cat asdf
+RUN ruby sina.rb \
+	ngrok http 4567 \
