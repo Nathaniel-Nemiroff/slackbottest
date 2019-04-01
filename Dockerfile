@@ -1,2 +1,2 @@
 FROM ubuntu
-RUN bash script
+RUN apt install ruby;snap install ngrok
