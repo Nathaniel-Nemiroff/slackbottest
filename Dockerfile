@@ -1,2 +1,2 @@
-FROM slackbottest
-ENTRYPOINT ["touch","asdf"]
+FROM ubuntu
+RUN touch asdf
