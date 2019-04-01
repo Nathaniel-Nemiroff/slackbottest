@@ -1,4 +1,3 @@
-FROM slackbottest
+FROM python:3-onbuild
 EXPOSE 80
-CMD["python","slackbot.py"]
-
+CMD["touch","asdf"]
