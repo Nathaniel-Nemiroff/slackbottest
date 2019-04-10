@@ -1,13 +1,8 @@
-
 FROM ruby:2.5
-RUN bash --version
-RUN chmod +x exportscript
-RUN ./exportscript
+RUN  git clone https://github.com/Nathaniel-Nemiroff/slackbottest
 
 FROM python:2.7-slim
-RUN bash --version
-RUN ./exportscript
-
-FROM bash:4.4
-RUN bash --version
-RUN ./exportscript
+RUN pip install slackclient
+RUN chmod +x exportscript;./exportscript
+RUN NEMITOKEN = 'xoxb-573900660641-580144662512-NLixtWX0Ln3zDzmKnn7xlBQO';export SLACK_BOT_TOKEN = NEMITOKEN
+RUN python ./slackbottest/slackbot.py
