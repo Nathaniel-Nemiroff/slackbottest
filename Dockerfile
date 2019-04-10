@@ -3,4 +3,4 @@ RUN curl -Lo /ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-
 RUN git clone https://github.com/Nathaniel-Nemiroff/slackbottest
 
 RUN gem install rubypython; gem install sinatra
-RUN ruby ./slackbottest/sina.rb
+RUN ruby ./slackbottest/sina.rb &
