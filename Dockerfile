@@ -1,9 +1,7 @@
-FROM ruby:2.5
-RUN  git clone https://github.com/Nathaniel-Nemiroff/slackbottest
+FROM bash:4.4
+RUN curl -Lo /ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip -o /ngrok.zip -d ./
+RUN  ./ngrok authtoken 2BRrdymMATW3q4B8keykC_5PvpojiLFyeUDoS86Cvqa
+RUN ./ngrok http 4567 &
+RUN curl localhost:4040/api/tunnels
 
-FROM python:2.7-slim
-RUN pip install slackclient
-RUN ls;ls ./slackbottest
-RUN chmod +x ./slackbottest/exportscript;./slackbottest/exportscript 
-RUN NEMITOKEN = 'xoxb-573900660641-580144662512-NLixtWX0Ln3zDzmKnn7xlBQO';export SLACK_BOT_TOKEN = NEMITOKEN
-RUN python ./slackbottest/slackbot.py
+
