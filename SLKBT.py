@@ -3,9 +3,6 @@ import time
 import re
 from slackclient import SlackClient
 
-import logging
-logging.basicConfig()
-
 import requests
 
 #instantiate slack client
@@ -14,20 +11,19 @@ slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 slackbot_id = None
 
 #constraints
-RTM_READ_DELAY = 5 # 1 second delay before reading from rtm
+RTM_READ_DELAY = 1 # 1 second delay before reading from rtm
 EXAMPLE_COMMAND = "do"
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 
 
-def sendMsg(msg):
-    if slack_client.rtm_connect(with_team_state=False):
-        print("nemi bot connected and running.")
-        slackbot_id = slack_client.api_call("auth.test")["user_id"]
-        slack_client.api_call(
-            "chat.postMessage",
-            channel='#everyone',
-            text=msg
-            )
+if slack_client.rtm_connect(with_team_state=False):
+    print("nemi bot connected and running.")
+    slackbot_id = slack_client.api_call("auth.test")["user_id"]
+    slack_client.api_call(
+        "chat.postMessage",
+        channel='#everyone',
+        text='test'
+        )
 
 
 '''
@@ -89,15 +85,3 @@ if __name__ == "__main__":
     else:
         print("Connection failed.  Exception traceback printed above.")
 '''
-
-
-if __name__ == "__main__":
-    if slack_client.rtm_connect(with_team_state=False):
-        print("nemi bot connected and running.")
-        #read bot's id by calling api method auth.test
-        slackbot_id = slack_client.api_call("auth.test")["user_id"]
-        while True:
-            sendMsg('hello')
-            time.sleep(RTM_READ_DELAY)
-    else:
-        print("Connection failed.  Exception traceback printed above.")
