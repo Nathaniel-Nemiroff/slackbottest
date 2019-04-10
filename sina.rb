@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'json'
 require 'rubypython'
-require 'json'
 
 
 get '/' do
