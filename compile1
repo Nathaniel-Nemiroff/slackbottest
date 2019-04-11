@@ -1,0 +1,2 @@
+cp Dockerfile$1 Dockerfile
+git add -A;git commit -m 'dock';git push
