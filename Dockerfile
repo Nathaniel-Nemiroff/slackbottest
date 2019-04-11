@@ -1,7 +1,7 @@
-FROM ruby:2.5
+FROM python:2.7
 
 RUN  git clone https://github.com/Nathaniel-Nemiroff/slackbottest
-RUN  gem install rubypython; gem install sinatra &
-RUN  ruby ./slackbottest/sina.rb &
-RUN curl localhost:4567
-EXPOSE 4567
+RUN  pip install slackclient; pip install requests
+
+RUN  extract SLACK_BOT_TOKEN='xoxb-573900660641-580144662512-7L1C7wnhwypwh96lIUPZPVRs'
+RUN  python ./slackbottest/slackbot.py
