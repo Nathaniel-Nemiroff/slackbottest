@@ -1,7 +1,7 @@
-FROM ubuntu:18.04
-RUN curl -Lo /ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip -o /ngrok.zip -d ./
-RUN  ./ngrok authtoken 2BRrdymMATW3q4B8keykC_5PvpojiLFyeUDoS86Cvqa
-RUN ./ngrok http 4567 &
-RUN curl localhost:4040/api/tunnels
+FROM ruby:2.5
 
-
+RUN  git clone https://github.com/Nathaniel-Nemiroff/slackbottest
+RUN  gem install rubypython; gem install sinatra &
+RUN  ruby ./slackbottest/sina.rb &
+RUN curl localhost:4567
+EXPOSE 4567
