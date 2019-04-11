@@ -96,8 +96,8 @@ if __name__ == "__main__":
         print("nemi bot connected and running.")
         #read bot's id by calling api method auth.test
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
-        while True:
-            sendMsg('hello')
-            time.sleep(RTM_READ_DELAY)
+        #while True:
+        sendMsg('hello')
+        #time.sleep(RTM_READ_DELAY)
     else:
         print("Connection failed.  Exception traceback printed above.")
