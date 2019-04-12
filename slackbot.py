@@ -9,7 +9,8 @@ logging.basicConfig()
 import requests
 
 #instantiate slack client
-slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
+#slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
+slack_client = SlackClient('xoxb-573900660641-580144662512-okBTzEJWW04z8k9Bzj4xuW8e')
 #bot's user id in slack: value is assigned after bot starts up
 slackbot_id = None
 
@@ -99,7 +100,7 @@ if __name__ == "__main__":
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
         #while True:
         print("message sending")
-        sendMsg('sent from slackbot')
+        sendMsg('sent from docker')
         print("message sent")
         #time.sleep(RTM_READ_DELAY)
     else:
