@@ -10,7 +10,7 @@ import requests
 
 #instantiate slack client
 #slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
-slack_client = SlackClient('xoxb-573900660641-580144662512-L7AQzRdV220BdAVZYVmHOTUV')
+slack_client = SlackClient('xoxb-573900660641-580144662512-zNC6pGbOZ5bzwHUQxCFKs9ez')
 #bot's user id in slack: value is assigned after bot starts up
 slackbot_id = None
 
