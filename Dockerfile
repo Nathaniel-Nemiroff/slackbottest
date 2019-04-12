@@ -7,5 +7,6 @@ COPY . /server
 EXPOSE 8000
 ENV NAME sbt
 
-RUN python server.py
+RUN python server.py &
+RUN curl localhost:8000
 #CMD ['python', 'server.py']
