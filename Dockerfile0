@@ -10,10 +10,10 @@ RUN ./ngrok http -subdomain=nemiroffslackbot 4567 &
 #http://nemiroffslackbot.ngrok.io
 # RUN curl localhost:4040/api/tunnels
 
-RUN export SLACK_BOT_TOKEN='xoxb-573900660641-580144662512-3Q5SHTLWCvyUPjgau3BVn1yy'
+#RUN export SLACK_BOT_TOKEN='xoxb-573900660641-580144662512-3Q5SHTLWCvyUPjgau3BVn1yy'
 
 RUN gem install rubypython; gem install sinatra
-RUN ruby ./slackbottest/sina.rb
+RUN ruby ./slackbottest/sina0.rb
 RUN echo 'AFTER SINA....FAILED
 
 
