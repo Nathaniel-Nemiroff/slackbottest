@@ -1,9 +1,11 @@
-FROM python:2.7
+FROM ruby:2.5
+RUN echo 'NUMBER 0'
+RUN curl -Lo /ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip; unzip -o /ngrok.zip -d ./
+RUN git clone https://github.com/Nathaniel-Nemiroff/slackbottest
+RUN  ./ngrok authtoken 2BRrdymMATW3q4B8keykC_5PvpojiLFyeUDoS86Cvqa
+EXPOSE 4567
+EXPOSE 4040
+RUN ./ngrok http 4567
+# RUN curl localhost:4040/api/tunnels
 
-RUN  echo 'ECHO WORKS'
-RUN  git clone https://github.com/Nathaniel-Nemiroff/slackbottest
-RUN  pip install slackclient; pip install requests
 
-EXPOSE 80
-RUN  export SLACK_BOT_TOKEN='xoxb-573900660641-580144662512-7L1C7wnhwypwh96lIUPZPVRs'
-RUN  python ./slackbottest/slackbot.py
