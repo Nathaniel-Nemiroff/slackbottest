@@ -97,7 +97,9 @@ if __name__ == "__main__":
         #read bot's id by calling api method auth.test
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
         #while True:
+        print("message sending")
         sendMsg('hello')
+        print("message sent")
         #time.sleep(RTM_READ_DELAY)
     else:
         print("Connection failed.  Exception traceback printed above.")
