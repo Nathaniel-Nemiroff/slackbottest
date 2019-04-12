@@ -8,7 +8,9 @@ get '/' do
     sys = RubyPython.import('sys')
     sys.path.append('.')
     sb=RubyPython.import('slackbot')
+    print('sending from ruby')
     sb.sendMsg('sent from ruby')
+    print('sent    from ruby')
     RubyPython.stop
     "hello world"
 end
@@ -20,7 +22,10 @@ post '/' do
     sys = RubyPython.import('sys')
     sys.path.append('.')
     sb=RubyPython.import('slackbot')
-    sb.sendMsg(postdata)
+    #sb.sendMsg(postdata)
+    print('sending from ruby')
+    sb.sendMsg('sent from ruby')
+    print('sent    from ruby')
     RubyPython.stop
     "hello world"
 end
