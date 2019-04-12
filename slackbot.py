@@ -92,6 +92,7 @@ if __name__ == "__main__":
 
 
 if __name__ == "__main__":
+    print('STARTING SLACKBOT SCRIPT')
     if slack_client.rtm_connect(with_team_state=False):
         print("nemi bot connected and running.")
         #read bot's id by calling api method auth.test

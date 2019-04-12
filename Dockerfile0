@@ -6,6 +6,6 @@ RUN  ./ngrok authtoken 2BRrdymMATW3q4B8keykC_5PvpojiLFyeUDoS86Cvqa
 EXPOSE 4567
 EXPOSE 4040
 RUN ./ngrok http 4567 &
-RUN curl localhost:4040/api/tunnels
+# RUN curl localhost:4040/api/tunnels
 
 
