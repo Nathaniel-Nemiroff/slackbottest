@@ -99,7 +99,7 @@ if __name__ == "__main__":
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
         #while True:
         print("message sending")
-        sendMsg('hello')
+        sendMsg('sent from slackbot')
         print("message sent")
         #time.sleep(RTM_READ_DELAY)
     else:
