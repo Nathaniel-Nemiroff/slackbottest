@@ -10,7 +10,6 @@ import logging
 logging.basicConfig()
 import requests
 
-print 'MAKE SURE TOKEN IS IN SERVER.PY'
 slack_client = SlackClient('xoxb-427109083139-595081416243-FI4yNZVWnXVt5A3T1P7kO4Jg')
 slackbot_id = None
 
@@ -20,8 +19,7 @@ def sendMsg(msg):
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
         slack_client.api_call(
             "chat.postMessage",
-            #channel='#botchannel',
-            channel='#general',
+            channel='#botchannel',
             text=msg
             )
 
@@ -39,6 +37,6 @@ class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
 Handler = MyRequestHandler
-server = SocketServer.TCPServer(('0.0.0.0', 8000), Handler)
+server = SocketServer.TCPServer(('0.0.0.0', 80), Handler)
 
 server.serve_forever()
