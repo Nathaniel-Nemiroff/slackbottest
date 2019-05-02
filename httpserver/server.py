@@ -10,12 +10,12 @@ import logging
 logging.basicConfig()
 import requests
 
-slack_client = SlackClient('xoxb-427109083139-595081416243-FI4yNZVWnXVt5A3T1P7kO4Jg')
+slack_client = SlackClient('TOKEN')
 slackbot_id = None
 
 def sendMsg(msg):
     if slack_client.rtm_connect(with_team_state=False):
-        print("nemi bot connected and running.")
+        print("slack bot connected and running.")
         slackbot_id = slack_client.api_call("auth.test")["user_id"]
         slack_client.api_call(
             "chat.postMessage",
@@ -25,7 +25,6 @@ def sendMsg(msg):
 
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_GET(self):
-        print 'asdf'
         sendMsg('from simple http')
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
     def do_POST(self):
